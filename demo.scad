@@ -43,6 +43,7 @@ color("black") {
     content = qrcode_type == "wifi"
         ? qr_wifi(ssid, psk, auth, hidden)
         : (qrcode_type == "phone" ? qr_phone_call(phone) : text);
-
+    
+    echo("QR code content: ", content);
     qr(content, error_correction, width, height, thickness, center, mask_pattern, encoding);
 }

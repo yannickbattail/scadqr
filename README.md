@@ -65,6 +65,24 @@ I also noticed Customizer has some weird quirks regarding which SCAD code it wil
 - avoid functional asserts (e.g.: `function f(x) = assert(x > 0) x;`)
 - some functions like `ord()` aren't available
 
+## How to run tests
+
+### Run in linux
+Install `zbarimg` and `xvfb-run` on debian based linux 
+```bash
+apt-get -y install zbar-tools xvfb
+```
+run tests
+```bash
+./run_tests.sh
+```
+
+### Run in docker 
+
+```bash
+docker run -v $PWD:/openscad openscad/openscad bash -c "apt-get update && apt-get -y install zbar-tools && ./run_tests.sh"
+```
+
 ---
 Copyright (c) 2023 Darwin Schuppan. All rights reserved.
 
